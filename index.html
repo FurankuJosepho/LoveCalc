@@ -114,10 +114,10 @@
             let loveScore = Math.floor(Math.random() * 100);
             if (yourName.value == "" || herName.value == ""){
                 alert("Fill up the unput")
-            }else if (loveScore > 40 && loveScore <= 80){
+            }else if (loveScore >= 50){
                 theResult.innerHTML = loveScore + "%" ;
                 relationStatus.innerHTML = yourName.value + "'s and " + herName.value + "'s love score is " + loveScore + "% your have a good relationship!";
-            }else if (loveScore < 40){
+            }else{
                 theResult.innerHTML = loveScore + "%" ;
                 relationStatus.innerHTML = yourName.value + "'s and " + herName.value + "'s love score is " + loveScore + "% you relationship is bad😭";
             }
