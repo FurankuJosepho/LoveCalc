@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <title>Love Calc</title>
+    <style>
+        h1 {
+            text-align: center;
+            position: fixed;
+        }
+        h2 {
+            text-align: center;
+            position: fixed;
+            margin-top: 230px;
+            font-size: 76px;
+            color: azure;
+            margin-left: 15px;
+        }
+        h3{
+            position: fixed;
+            margin-top: 217px;
+        }
+        .your {
+            margin-right: 490px;
+        }
+        .her {
+            margin-left: 494px;
+        }
+        .container{
+            display: flex;
+            justify-content: center;
+        }
+        input {
+            position: fixed;
+            margin: 100px;
+            text-align: center;
+            border: none;
+            border-radius: 10px;
+            box-shadow: 2px 3px 20px 0px rgba(0, 0, 0, 0.575);
+        }
+        .heart {
+            background-color: red;
+            display: inline-block;
+            height: 150px;
+            margin: 240px 10px;
+            position: fixed;
+            top: 0;
+            transform: rotate(-45deg);
+            width: 150px;
+          }
+          
+          .heart:before,
+          .heart:after {
+            content: "";
+            background-color: red;
+            border-radius: 50%;
+            height: 150px;
+            position: absolute;
+            width: 150px;
+          }
+          
+          .heart:before {
+            top: -70px;
+            left: 0;
+          }
+          
+          .heart:after {
+            left: 70px;
+            top: 0;
+          }
+          #yourName {
+            margin-top: 270px;
+            margin-right: 37rem;
+            padding: 10px;
+          }
+          #herName {
+            margin-top: 270px;
+            margin-left: 37rem;
+            padding: 10px;
+          }
+          button {
+            margin-top: 470px;
+            display: block;
+          }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Love Calculator</h1>
+        <h3 class="your">Your Name</h3>
+        <h3 class="her">Crush Name</h3>
+        <div class="heart"></div>
+        <input type="text" id="yourName" placeholder="Full Name">
+        <input type="text" id="herName" placeholder="Full Name">
+        <button onclick="myResult()" class="btn btn-danger btn-lg">Calculate</button>
+        <button onclick="clearResult()" class="btn btn-secondary btn-lg">Clear</button>
+        <h2 id="result"></h2>
+    </div>
+    <script>
+        let yourName = document.getElementById("yourName");
+        let herName = document.getElementById("herName");
+        let theResult = document.getElementById("result");
+        function myResult() {
+            let loveScore = Math.floor(Math.random() * 100);
+            if (loveScore > 40 && loveScore <= 80 ){
+                theResult.innerHTML = loveScore + "%" 
+            }else if (loveScore <= 40 ){
+                theResult.innerHTML = loveScore + "%"
+            }
+        }
+        function clearResult() {
+            theResult.innerHTML = "";
+        }
+    </script>
+</body>
+</html>
