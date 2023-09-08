@@ -117,7 +117,7 @@
             }else if (loveScore > 40 && loveScore <= 80){
                 theResult.innerHTML = loveScore + "%" ;
                 relationStatus.innerHTML = yourName.value + "'s and " + herName.value + "'s love score is " + loveScore + "% your have a good relationship!";
-            }else{
+            }else if (loveScore < 40){
                 theResult.innerHTML = loveScore + "%" ;
                 relationStatus.innerHTML = yourName.value + "'s and " + herName.value + "'s love score is " + loveScore + "% you relationship is bad😭";
             }
