@@ -105,11 +105,14 @@
         let theResult = document.getElementById("result");
         function myResult() {
             let loveScore = Math.floor(Math.random() * 100);
-            if (loveScore > 40 && loveScore <= 80 ){
+            if (yourName.value == "" || herName.value == ""){
+                alert("Fill up the unput")
+            }else if (loveScore > 40 && loveScore <= 80 ){
                 theResult.innerHTML = loveScore + "%" 
             }else if (loveScore <= 40 ){
                 theResult.innerHTML = loveScore + "%"
             }
+
         }
         function clearResult() {
             theResult.innerHTML = "";
