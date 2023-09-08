@@ -23,6 +23,11 @@
             position: fixed;
             margin-top: 217px;
         }
+        h4 {
+            text-align: center;
+            position: fixed;
+            margin-top: 550px;
+        }
         .your {
             margin-right: 490px;
         }
@@ -96,23 +101,29 @@
         <input type="text" id="yourName" placeholder="Full Name">
         <input type="text" id="herName" placeholder="Full Name">
         <button onclick="myResult()" class="btn btn-danger btn-lg">Calculate</button>
-        <button onclick="clearResult()" class="btn btn-secondary btn-lg">Clear</button>
+        <button onclick="reload()" class="btn btn-secondary btn-lg">Clear</button>
         <h2 id="result"></h2>
+        <h4 id="relationStatus"></h4>
     </div>
     <script>
         let yourName = document.getElementById("yourName");
         let herName = document.getElementById("herName");
         let theResult = document.getElementById("result");
+        let relationStatus = document.getElementById("relationStatus");
         function myResult() {
             let loveScore = Math.floor(Math.random() * 100);
             if (yourName.value == "" || herName.value == ""){
                 alert("Fill up the unput")
-            }else{
+            }else if (loveScore > 40 && loveScore <= 80){
                 theResult.innerHTML = loveScore + "%" ;
+                relationStatus.innerHTML = yourName.value + " and " + herName.value + " is " + loveScore + "% your have a good relationship!";
+            }else if (loveScore < 40){
+                theResult.innerHTML = loveScore + "%" ;
+                relationStatus.innerHTML = yourName.value + " and " + herName.value + " is " + loveScore + "% you relationship is bad😭";
             }
         }
-        function clearResult() {
-            theResult.innerHTML = "";
+        function reload() {
+            window.location.reload();
         }
     </script>
 </body>
